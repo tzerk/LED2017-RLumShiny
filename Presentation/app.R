@@ -13,14 +13,14 @@ ui <- dashboardPage(
   dashboardHeader(title = div("", img(src = "img/LED2017_Logo_alpha.png", height = "50px", width = "83px")),
                   tags$li(a(p("RLumShiny - A graphical user interface for the R Package ’Luminescence’", class = "header-title",
                               style = "margin-top:  5px; margin-bottom: 0px; margin-right: 30px;"),
-                            style = "padding-top: 11px; padding-bottom: 10px; font-size: 20px;"),
+                            style = "padding-top: 10px; padding-bottom: 10px; font-size: 20px;"),
                           class = "dropdown"),
                   tags$li(a(href = "http://www.geographie.uni-koeln.de/",
-                            img(src = "img/UoC_Logo.png", height = "30px", width = "148px"),
-                            style = "padding-top: 10px; padding-bottom: 10px;"),
+                            img(src = "img/UoC_Logo_short.png", height = "30px", width = "30px"),
+                            style = "padding-top: 10px; padding-bottom: 0px;"),
                           class = "dropdown"),
                   tags$li(class = "dropdown",
-                          actionLink("aboutBtn", "", icon = icon("info-circle")))),
+                          actionLink("aboutBtn", "", icon = icon("info-circle", class = "info-icon")))),
   
   ## ------------------------------------------------------------------------ ##
   ##                             SIDEBAR
@@ -887,7 +887,7 @@ server <- function(input, output, session) {
                       fluidRow(
                         column(width = 6,
                                div(align = "center", tags$h3("R code for this presentation")),
-                               tags$img(src = "img/shiny-server_iramat.jpeg", style = "width:100%;", border = 0),
+                               tags$img(src = "img/qr_github.png", style = "width:100%;", border = 0),
                                div(align = "center", tags$h4("https://github.com/tzerk/LED2017-RLumShiny"))
                         ),
                         column(width = 6, 

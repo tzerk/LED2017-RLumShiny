@@ -5,12 +5,40 @@
   font-size: 90%;
 }
 
-@media (max-width: 1195px) {
+@media (max-width: 1059px) {
+  .header-title {
+  font-size: 1.7vw;
+}
+}
+@media (max-width: 930px) {
+  .header-title {
+  font-size: 1.6vw;
+}
+}
+@media (max-width: 877px) {
+  .header-title {
+  font-size: 1.5vw;
+}
+}
+@media (max-width: 828px) {
+  .header-title {
+  font-size: 1.4vw;
+}
+}
+@media (max-width: 785px) {
   .header-title {
   font-size: 1.3vw;
 }
 }
+@media (max-width: 767px) {
+  .header-title {
+  font-size: 6pt;
+}
+}
 
+.info-icon {
+  font-size: 15pt;
+}
 
 li {
     display: block;
