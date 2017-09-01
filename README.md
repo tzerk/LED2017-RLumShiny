@@ -1,0 +1,11 @@
+Interactive presentation shown at the international LED 2017 in Cape Town
+
+#### Title
+> Easing access to R using ‘shiny’ to create graphical user interfaces:<br>
+> An example for the R package ‘Luminescence’
+
+#### Authors
+> Burow, C., Kreutzer, S., Dietze, M., Fuchs, M.C., Schmidt, C., Fischer, M., Brückner, H.
+
+## Live demo
+You can view the presentation [here](http://rlum.geographie.uni-koeln.de:3838/LED2017-RLumShiny/Presentation/)
