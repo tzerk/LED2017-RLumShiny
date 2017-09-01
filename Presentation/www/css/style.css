@@ -129,7 +129,9 @@ li {
 }
 
 #qr_hr, #title_hr {
-  border-top: 1px solid #367fa9
+  border-top: 1px solid #367fa9;
+  margin-top: 3px;
+  margin-bottom: 7px;
 }
 
 :-ms-fullscreen {

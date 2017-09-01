@@ -33,7 +33,7 @@ ui <- dashboardPage(
                 sidebarMenu(
                   id = "sidebar", 
                   br(),
-                  div(align = "center", p("Main")), 
+                  # div(align = "center", p("Main")), 
                   menuItem("Introduction", 
                            icon = icon("play"), tabName = "intro", startExpanded = TRUE,
                            menuSubItem(HTML("The p<b>R</b>oblem"), icon = icon("question-circle-o"), tabName = "intro_1"),
@@ -63,19 +63,17 @@ ui <- dashboardPage(
                            menuSubItem("Reception", tabName = "lum_3")),
                   
                   menuItem("Get started!", icon = icon("rocket"), tabName = "getstarted")
-                )
+                ),
                 ## SIDEBAR MISC INFORMATION
                 ## -------------------------------------------------------------
                 
-                # tags$hr(id = "qr_hr"),
+                tags$hr(id = "qr_hr"),
                 
-                
-                
-                # tags$p(id = "qr_presentation_text", align = "center",
-                #        HTML("Watch this presentation on </br> your smartphone or tablet!")),
-                # tags$p(id = "qr_presentation", align = "center",
-                #        tags$img(src = "img/qr_presentation_tablet.png", style = "width:100%;", border = 0)
-                # )
+                tags$p(id = "qr_presentation_text", align = "center", style = "font-size: 8pt; color: lightgrey;",
+                       HTML("Watch this presentation on </br> your smartphone or tablet.")),
+                tags$p(id = "qr_presentation", align = "center",
+                       tags$img(src = "img/qr_presentation.png", style = "width:100px;", border = 0)
+                )
     )
   ),
   
@@ -140,7 +138,7 @@ ui <- dashboardPage(
                                               )
                                        )
                               ),
-                              tags$img(src = "img/expectation.gif", style = "width:100%;", border = 0)
+                              htmlOutput("gif_expectation")
                      ),
                      
                      tabPanel(HTML(paste("Working with", tags$b("R"), "- ", tags$u("Reality", style = "color:darkred;"))),
@@ -155,7 +153,7 @@ ui <- dashboardPage(
                                               )
                                        )
                               ),
-                              tags$img(src = "img/reality.gif", style = "width:100%;", border = 0)
+                             htmlOutput("gif_reality")
                      )
               )
       ),
@@ -700,7 +698,7 @@ ui <- dashboardPage(
     ## ---------------------------------------------------------------------------
     tags$div(class = "sticky-footer",
              tags$p(align = "right",
-                    HTML("Copyright &copy; 2017 Christoph Burow |  This presentation is provided 'as is' without express or implied warranty.&nbsp;&nbsp;")
+                    HTML("Use &larr;&rarr;&uarr;&darr; for navigation.  &emsp;&emsp; Copyright &copy; 2017 Christoph Burow |  This presentation is provided 'as is' without express or implied warranty.&nbsp;&nbsp;")
              )
     )
   )
@@ -779,6 +777,10 @@ server <- function(input, output, session) {
   # TAB FORWARD
   observeEvent(input$forward, {
     
+    # sidebar must not be collapsed when navigating the sidebar elements
+    shinyjs::runjs("document.querySelector('body').classList.remove('sidebar-collapse');")
+    
+    # remove any existing modals
     removeModal()
     values$modal <- FALSE
     
@@ -792,6 +794,10 @@ server <- function(input, output, session) {
   # TAB BACK
   observeEvent(input$back, {
     
+    # sidebar must not be collapsed when navigating the sidebar elements
+    shinyjs::runjs("document.querySelector('body').classList.remove('sidebar-collapse');")
+    
+    # remove any existing modals
     removeModal()
     values$modal <- FALSE
     
@@ -819,6 +825,22 @@ server <- function(input, output, session) {
         return(NULL)
       }
     } 
+    
+    # Re-load gif: https://stackoverflow.com/a/23063532
+    if (this_tab == "intro_1_tab2") {
+      shinyjs::runjs("
+                     var imgsrc = $('#gif1').attr('src');
+                     $('#gif1').attr('src', '');
+                     $('#gif1').attr('src', imgsrc);
+                     ")
+    } 
+    if (this_tab == "intro_1_tab3") {
+      shinyjs::runjs("
+                     var imgsrc = $('#gif2').attr('src');
+                     $('#gif2').attr('src', '');
+                     $('#gif2').attr('src', imgsrc);
+                     ")
+    }
     
     if (this_tab == "intro_2_tab1" || this_tab == "intro_2_tab2") {
       updateCheckboxInput(session, "solution_rotate", value = sample(c(TRUE, FALSE), 1))
@@ -983,6 +1005,13 @@ server <- function(input, output, session) {
   
   ## INTRODUCTION
   ## ---------------------------------------------------------------------------
+  output$gif_expectation <- renderUI({
+    tags$img(id = "gif1", src = "img/expectation.gif", style = "width:100%;", border = 0)
+  })
+  output$gif_reality <- renderUI({
+    tags$img(id = "gif2", src = "img/reality.gif", style = "width:100%;", border = 0)
+  })
+  
   output$intro_2_task <- renderUI({
     if (input$intro_2_task %% 2 != 0) {
       tags$p(HTML("<b>Consider the following situation:</b></br> You, as a scientist, are facing the task
@@ -992,7 +1021,6 @@ server <- function(input, output, session) {
               The desired plot may look like the one below."))
     }
   })
-  
   
   output$intro_2_code <- renderUI({
     if (input$intro_2_code %% 2 != 0) {

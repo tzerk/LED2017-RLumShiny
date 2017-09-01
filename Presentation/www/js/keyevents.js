@@ -1,42 +1,51 @@
 shinyjs.init = function() {
+  
+  var pressed = null;
+  var sidebar = true;
+  
+  $(document).on('keydown', function(e) {
+    e.preventDefault();
+    pressed = +new Date();
+  });
 
-  $(document).keydown(function(e) {
+  $(document).on('keyup', function(e) {
+    var duration = +new Date() - pressed;
+    pressed = null;
+    
     if (e.which == 34 || e.which == 40) {
       e.preventDefault();
       Shiny.onInputChange('forward', Math.random());
-      forward = !forward;
     }
     if (e.which == 33 || e.which == 38) {
-      e.preventDefault();    
+      e.preventDefault();
       Shiny.onInputChange('back', Math.random());
-      back = !back;
     }
     // Keyboard only: left arrow to navigate through tabs
     if (e.which == 37) { 
       e.preventDefault();    
       Shiny.onInputChange('altclick', Math.random());
-      back = !back;
     }
     if (e.which == 190 || e.which == 32) {
       e.preventDefault();
-      Shiny.onInputChange('trigger', Math.random());
-      // toggleFullscreen(); // see fullscreen.js
-      
-    }
-    if (e.which == 116 || e.which == 39) {
-      e.preventDefault();
-      Shiny.onInputChange('click', Math.random());
-      
-      /* Show/Hide sidebar on keypress. Problem: browser exits fullscreen
-      if (sidebar) {
-        document.querySelector('body').classList.add('sidebar-collapse');
+      if (duration < 80) {
+        // Show/Hide sidebar on long keypress
+        if (sidebar) {
+          document.querySelector('body').classList.add('sidebar-collapse');
+        } else {
+          document.querySelector('body').classList.remove("sidebar-collapse");
+        }
+        
+        sidebar = !sidebar;
       } else {
-        document.querySelector('body').classList.remove("sidebar-collapse");
+        Shiny.onInputChange('trigger', Math.random());
       }
       
-      toggleFullscreen();
-      sidebar = !sidebar;
-      */
+    }
+    if (e.which == 116 || e.which == 39 || e.which == 27) {
+      e.preventDefault();
+      //toggleFullscreen(); // see fullscreen.js
+      Shiny.onInputChange('click', Math.random());
+      
     }
   });
   

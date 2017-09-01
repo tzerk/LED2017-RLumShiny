@@ -67,9 +67,9 @@ about_text <- paste("This presentation was entirely written in <b>R</b> using th
                     "used to produce this web application please see the 'Get started' section",
                     "on the side bar and scan the corresponding QR code. If you are watching this presentation",
                     "on a mobile device please open the following URL in a desktop browser", tags$br(), tags$br(),
-                    tags$a(href = "#", "http://rlum.geographie.uni-koeln.de:3838/LED2017-RLumShiny/"), tags$br(), tags$br(),
+                    tags$a(href = "http://rlum.geographie.uni-koeln.de:3838/LED2017-RLumShiny/Presentation/", "http://rlum.geographie.uni-koeln.de:3838/LED2017-RLumShiny/Presentation/"), tags$br(), tags$br(),
                     "in order to be able to scan the QR codes. If you want to contact the author",
-                    "of this presentation you can send an email to", tags$a(href = "#", "christoph.burow@uni-koeln.de"),
+                    "of this presentation you can send an email to", tags$a(href = "mailto:christoph.burow@uni-koeln.de", "christoph.burow@uni-koeln.de"),
                     ".", tags$br(), tags$br(),
                     actionButton("dummyBtn", "", icon = icon("info-circle"), class = "info-btn"),
                     "Watch out for these buttons for additional text information!") %>% 
