@@ -1,5 +1,3 @@
-Interactive presentation shown at the international LED 2017 in Cape Town
-
 #### Title
 > Easing access to R using ‘shiny’ to create graphical user interfaces:<br>
 > An example for the R package ‘Luminescence’
@@ -9,3 +7,5 @@ Interactive presentation shown at the international LED 2017 in Cape Town
 
 ## Live demo
 You can view the presentation [here](http://rlum.geographie.uni-koeln.de:3838/LED2017-RLumShiny/Presentation/)
+
+<img src="https://www.tzerk.de/img/github/LED2017_Presentation.png"></img>
