@@ -1,0 +1,186 @@
+#talk-title {
+  margin-top: 10px;
+  margin-right: 0;
+  color: white;
+  font-size: 90%;
+}
+
+@media (max-width: 1195px) {
+  .header-title {
+  font-size: 1.3vw;
+}
+}
+
+
+li {
+    display: block;
+}
+
+.lumlu {
+  padding-left: 20px;
+}
+
+.lumli:before {
+    /*Using a Bootstrap glyphicon as the bullet point*/
+    content: "\e080";
+    font-family: 'Glyphicons Halflings';
+    font-size: 15px;
+    float: left;
+    margin-top: 4px;
+    margin-left: -17px;
+    color: #CCCCCC;
+}
+
+.lumli {
+  font-size: 13pt;
+}
+
+.highlight-sidebar {
+  color: white;
+  font-weight: bold;
+}
+
+.sticky-footer {
+  position:fixed;
+  bottom:0;
+  right:0;
+  left:0;
+  background:#ecf0f5;
+  padding:0px;
+  font-size: 10px;
+  box-sizing:border-box;
+}
+
+.sidebar-small {
+  font-size: 12px;
+}
+
+#title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#box_title {
+  height: 30px;
+}
+
+#reality {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  #github {
+  font-size: 1vw;
+}
+}
+
+.qr-table {
+  width: 100%; 
+  min-width: 50px;
+  max-width: 75px;
+}
+
+.info-btn {
+  color: white;
+  font-size: 18px;
+  font-weight: lighter;
+  background: #222d32;
+}
+
+#qr_presentation {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#qr_presentation_text {
+  margin-top: 10px;
+  margin-right: 0;
+  color: white;
+  font-size: 90%;
+}
+
+#qr_hr, #title_hr {
+  border-top: 1px solid #367fa9
+}
+
+:-ms-fullscreen {
+  /* https://davidwalsh.name/fullscreen */
+  width: 100%;
+}
+
+
+.number{
+	color: rgb(21,20,181) ;
+	font-size: 11px;
+}
+
+.functioncall{
+	color: red;
+	font-size: 11px;
+}
+
+.string{
+	color: rgb(153,153,255) ;
+	font-size: 11px;
+}
+
+.keyword{
+	color: black;
+	font-size: 11px;
+}
+
+.argument{
+	color: rgb( 177,63,5) ;
+	font-size: 11px;
+}
+
+.comment{
+	color: green;/* rgb( 204,204,204) ; */
+	font-size: 11px;
+}
+
+.roxygencomment{
+	color: rgb(0,151,255);
+	font-size: 11px;
+}
+
+.formalargs{
+	color: rgb(18,182,18);
+	font-size: 11px;
+}
+
+.eqformalargs{
+	color: rgb(18,182,18);
+	font-size: 11px;
+}
+
+.assignement{
+	color: rgb(55,55,98);
+	font-size: 11px;
+}
+
+.package{
+	color: rgb(150,182,37);
+	font-size: 11px;
+}
+
+.slot{
+	font-style:italic;
+	font-size: 11px;
+}
+
+.symbol{
+	color: black ;
+	font-size: 11px;
+}
+
+.prompt{
+	color: black ;
+	font-size: 11px;
+}
+
+.line{
+    color: gray ;
+    font-size: 11px;
+}

@@ -1,0 +1,35 @@
+---
+title: "<h3>RLumShiny - A graphical user interface for the R package 'Luminescence'</h3>"
+author: |
+  Christoph Burow<sup>1</sup>, 
+  Sebastian Kreutzer<sup>2</sup>, 
+  Michael Dietze<sup>3</sup>,
+  Margret C. Fuchs<sup>4</sup>, 
+  Manfred Fischer<sup>5</sup>, 
+  Christoph Schmidt<sup>5</sup>,
+  Helmut Brückner<sup>1</sup>
+Affiliation: |
+  <sup>1</sup>Institute of Geography, University of Cologne, 50923 Cologne, Germany,
+  <sup>2</sup>IRAMAT-CRP2A, Universtié Bordeaux Montaigne, France,
+  <sup>3</sup>Section 5.1 Geomorphology, GFZ German Research Centre for Geosciences, 14473 Potsdam, Germany,
+  <sup>4</sup>Helmholtz-Zentrum Dresden-Rossendorf, Helmholtz Institute Freiberg for Resource Technology, Freiberg, Germany,
+  <sup>5</sup>Geographical Institute, Geomorphology, University of Bayreuth, 95440 Bayreuth, Germany
+output:
+  html_document:
+    df_print: paged
+---
+
+Since the release of the **R** package 'Luminescence’ in 2012 the functionality 
+of the package has been greatly enhanced by implementing further functions for 
+measurement data processing, statistical analysis and graphical output. 
+Along with the accompanying increase in complexity of the package, working with 
+the command-line interface of **R** can be tedious, especially for users without 
+previous experience in programming languages. Here, we present a collection of 
+interactive web applications that provide a user-friendly graphical user 
+interface for the ’Luminescence’ package. These applications can be accessed 
+over the internet or used on a local computer using the **R** package ’RLumShiny’.
+
+
+
+#### References
+
