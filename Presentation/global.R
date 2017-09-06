@@ -236,6 +236,7 @@ rlumshiny_app_df <- data.frame(
                   "Dose Recovery Test", 
                   "Cosmic Dose Rate",
                   "CW Curve Transformation",
+                  "Filter combinations",
                   "Fast Ratio",
                   "Fading Analysis/Correction"),
   Function = c("plot_AbanicoPlot()",
@@ -245,6 +246,7 @@ rlumshiny_app_df <- data.frame(
                "plot_DRTResults()",
                "calc_CosmicDoseRate()",
                "CW2pHMi(), CW2pLM(), CW2pLMi(), CW2pPMi()",
+               "plot_FilterCombinations()",
                "calc_FastRatio()",
                "analyse_FadingMeasurement(), calc_FadingCorr()")
 )
