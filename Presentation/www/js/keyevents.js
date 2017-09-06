@@ -27,7 +27,7 @@ shinyjs.init = function() {
     }
     if (e.which == 190 || e.which == 32) {
       e.preventDefault();
-      if (duration < 80) {
+      if (duration < 50) {
         // Show/Hide sidebar on long keypress
         if (sidebar) {
           document.querySelector('body').classList.add('sidebar-collapse');
